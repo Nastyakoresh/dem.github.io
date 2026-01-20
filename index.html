@@ -146,5 +146,81 @@ https://github.com/KoreshOchko07/KoreshOchko07.github.io
 <p>Это число — произведение двух простых чисел по ~1536 бит каждый. Его длина: <strong>925 десятичных цифр</strong>.</p>
 </body>
 </html>
+!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>❄️ С Новым Годом! ❄️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: #0f0c29; /* Тёмный фон */
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    .content {
+      text-align: center;
+      padding-top: 10vh;
+      z-index: 10;
+      position: relative;
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px rgba(255,255,255,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>❄️ С Новым Годом! ❄️</h1>
+    <p>Пусть твои PR'ы мёржатся без конфликтов!</p>
+  </div>
 
+  <!-- Скрипт снежинок -->
+  <script>
+    // Создаём снежинки
+    const snowflakesCount = 150;
+    const container = document.body;
+
+    for (let i = 0; i < snowflakesCount; i++) {
+      const snowflake = document.createElement('div');
+      snowflake.innerHTML = '❄';
+      snowflake.style.position = 'absolute';
+      snowflake.style.top = '-20px';
+      snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.opacity = Math.random() * 0.7 + 0.3;
+      snowflake.style.color = 'white';
+      snowflake.style.pointerEvents = 'none';
+      snowflake.style.zIndex = '1';
+
+      container.appendChild(snowflake);
+
+      // Анимация падения
+      animateSnowflake(snowflake);
+    }
+
+    function animateSnowflake(el) {
+      const duration = Math.random() * 5 + 5; // 5–10 сек
+      const delay = Math.random() * 5;
+      const startX = parseFloat(el.style.left);
+      const swing = Math.random() * 100 - 50; // Горизонтальное колебание
+
+      el.animate([
+        { transform: `translateX(0px) translateY(0vh)`, opacity: el.style.opacity },
+        { transform: `translateX(${swing}px) translateY(100vh)`, opacity: el.style.opacity * 0.3 }
+      ], {
+        duration: duration * 1000,
+        delay: delay * 1000,
+        iterations: Infinity,
+        easing: 'linear'
+      });
+    }
+  </script>
+</body>
+</html>
 -
